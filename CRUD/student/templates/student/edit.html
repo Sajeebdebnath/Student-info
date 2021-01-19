@@ -1,0 +1,49 @@
+{% extends "student/base.html" %}
+{% block text %}
+
+<div class="form-design">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="header-text">Student Managment System</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                          Edit Student Information
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                  <label for="name">Full Name:</label>
+                                  <input type="text" class="form-control" name="full_name" id="name" value="{{ student.name }}">
+                                </div>
+                                <div class="form-group">
+                                  <label for="varsity_id">Varstiy ID</label>
+                                  <input type="text" class="form-control" name="varsity_id" id="varsity_id" value="{{ student.varsity_id }}">
+                                </div>
+                                <div class="form-group">
+                                  <label for="phone">Phone</label>
+                                  <input type="text" class="form-control" name="phone" id="phone" value="{{ student.phone }}">
+                                </div>
+                                <div class="form-group">
+                                  <label for="address">Address</label>
+                                  <input type="text" class="form-control" name="address" id="address" value="{{ student.address }}">
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">Email address:</label>
+                                  <input type="email" class="form-control" name="email" id="email" value="{{ student.email }}">
+                                </div>
+                                <button type="submit" class="btn btn-success">Update Information</button>
+                              </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
